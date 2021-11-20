@@ -1,0 +1,73 @@
+// &display=swap&subset=cyrillic-ext
+// @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,regular,500,700,900,&display=swap");
+
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("../fonts/HelveticaNeue-Roman.woff2") format("woff2"),
+		url("../fonts/HelveticaNeue-Roman.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("../fonts/HelveticaNeueBoldCondensed.woff2") format("woff2"),
+		url("../fonts/HelveticaNeueBoldCondensed.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("../fonts/HelveticaNeue-CondensedBlack.woff2") format("woff2"),
+		url("../fonts/HelveticaNeue-CondensedBlack.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+
+
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}

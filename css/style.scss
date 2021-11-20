@@ -1,0 +1,583 @@
+@import "_mixins";
+
+@import "_null";
+
+@use "_module";
+
+body {
+	line-height: 1;
+	font-family: "Helvetica Neue";
+	color: #ffffff;
+	background: #1a1a1a;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+[class*="__container"] {
+	max-width: 1140px;
+	margin: 0px auto;
+	padding: 0 15px;
+}
+
+// $main-color: ;
+@media (max-width: 1140px) {
+	[class*="__container"] {
+		max-width: 970px;
+	}
+}
+/* №2 */
+@media (max-width: 991.98px) {
+	[class*="__container"] {
+		max-width: 750px;
+	}
+}
+/* №3 */
+@media (max-width: 767.98px) {
+	[class*="__container"] {
+		 max-width: 500px;
+	}
+}
+/* .................................................... */
+.page {
+	flex: 1 1 auto;
+	position: relative;
+}
+// ШАПКА_______________________________________________________
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	border-bottom: 2px solid #ffffff11;
+	// .header__container
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 33px 15px;
+		align-items: center;
+		row-gap: 25px;
+		@media (max-width: 767.98px) {
+			flex-direction: column;
+			align-items: center;
+			padding: 20px 15px;
+		}
+	}
+	// .header__logo
+	&__logo {
+	}
+	// .header__menu
+	&__menu {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0px 45px;
+	}
+}
+.logo {
+	// .logo__icon
+	&__icon {
+		display: flex;
+	}
+	// .logo__ic
+	&__ic {
+		margin: 0px 8px 0px 0px;
+	}
+	// .logo__text
+	&__text {
+		display: flex;
+		align-items: flex-end;
+	}
+	// .logo__txt
+	&__txt {
+	}
+}
+.menu {
+	// .menu__item
+	&__item {
+		font-weight: 700;
+		font-size: 14px;
+		transition-duration: 0.3s;
+		color: inherit;
+		&:hover {
+			color: #34c759;
+		}
+	}
+}
+
+// Первый блок______________________________________
+
+.main-block {
+	background: url("../img/header/bg.jpg") 70%/ cover no-repeat;
+	// .main-block__container
+	&__container {
+		padding-top: 171px;
+		padding-bottom: 401px;
+		@media (max-width: 767.98px) {
+			padding-top: 130px;
+			padding-bottom: 280px;
+		}
+	}
+	// .main-block__top
+	&__top {
+		&:not(:last-child) {
+			margin: 0px 0px 91px 0px;
+		}
+	}
+	// .main-block__titles
+	&__titles {
+		&:not(:last-child) {
+			margin: 0px 0px 40px 0px;
+		}
+	}
+	// .main-block__button
+	&__button {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		&:not(:last-child) {
+			margin: 0px 0px 70px 0px;
+			@media (max-width: 767.98px) {
+				margin: 0px 0px 40px 0px;
+			}
+		}
+		
+	}
+	// .main-block__cards
+	&__cards {
+	}
+}
+.titles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 16px 0px;
+	// .titles__title
+	&__title {
+		font-size: 72px;
+		line-height: 84px;
+		text-align: center;
+		letter-spacing: 11px;
+		letter-spacing: 0.1em;
+		text-transform: capitalize;
+		@media (max-width: 767.98px) {
+			font-size: 40px;
+			line-height: 45px;
+		}
+	}
+	// .titles__span
+	&__span {
+		font-size: 72px;
+		line-height: 60px;
+		letter-spacing: 0.1em;
+		text-align: center;
+		@media (max-width: 767.98px) {
+			font-size: 40px;
+			line-height: 45px;
+		}
+	}
+
+	// .titles__subtitle
+	&__subtitle {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 26px;
+		text-align: center;
+		letter-spacing: 0.2px;
+		max-width: 595px;
+		opacity: 0.7;
+		@media (max-width: 767.98px) {
+			font-size: 15px;
+			line-height: 24px;
+		}
+	}
+}
+
+.button {
+	background: #34c759;
+	border-radius: 43px;
+	padding: 25px 57px;
+	align-self: center;
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: 0.2em;
+	color: #1a1a1a;
+	transition-duration: 0.3s;
+		&:hover {
+			background: #34c7597e;
+			outline: 1px solid rgb(250, 250, 250);
+		}
+		@media (max-width: 767.98px) {
+			font-size: 15px;
+			line-height: 24px;
+			padding: 15px 28px;
+		}
+}
+
+// Карточки___________________________________
+
+.cards {
+	display: flex;
+	justify-content: space-between;
+	max-width: 930px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+		@media (max-width: 767.98px) {
+			justify-content: row;
+			row-gap: 15px;
+		}
+	// .cards__items
+	&__items {
+		flex: 1 1 33.333%;
+		padding: 0 15px;
+		max-width: 245px;
+		display: flex;
+		flex-direction: column;
+			@media (max-width: 767.98px) {
+				flex: 1 1 100%;
+				max-width: 100%;
+			}
+	}
+	// .cards__image
+	&__image {
+		text-align: center;
+		&:not(:last-child) {
+			margin: 0px 0px 16px 0px;
+			@media (max-width: 767.98px) {
+				margin: 0px 0px 0px 0px;
+			}
+		}
+	}
+	// .cards__icon
+	&__icon {
+	}
+
+	// .cards__text
+	&__text {
+	}
+	// .cards__info
+	&__info {
+		font-weight: 400;
+		font-size: 16px;
+		text-align: center;
+		line-height: 30px;
+		color: inherit;
+	}
+	// .cards__description
+	&__description {
+		font-weight: 400;
+		font-size: 14px;
+		text-align: center;
+		opacity: 0.5;
+		line-height: 24px;
+	}
+}
+
+// Второй блок_______________________________________________
+
+.dish {
+	// .dish__container
+	&__container {
+		margin-top: -240px;
+	}
+	// .dish__titles
+	&__titles {
+		text-align: center;
+		padding: 90px 0px 60px 0px;
+		position: relative;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: 767.98px) {
+			padding: 45px 0px 0px 0px;
+		}
+	}
+}
+.titles-dish {
+	// .titles-dish__title
+	&__title {
+		top: 26%;
+		left: 31.5%;
+		position: absolute;
+		font-weight: 900;
+		font-size: 100px;
+		line-height: 150px;
+		letter-spacing: 0.2em;
+		color: #4d4d4d;
+			@media (max-width: 1140px) {
+				left: 28%;
+			}
+			@media (max-width: 991.98px) {
+				left: 22%;
+			}
+		&::after {
+			background: #34c759;
+			content: "";
+			width: 60px;
+			height: 2px;
+			display: block;
+			margin: 0 auto;
+			transform: translate(-20%, 0%);
+		}
+		@media (max-width: 767.98px) {
+			display: none;
+		}
+	}
+	// .titles-dish__uptitle
+	&__uptitle {
+		text-align: center;
+		position: relative;
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 90px;
+		text-align: center;
+		letter-spacing: 0.2em;
+		text-transform: capitalize;
+		@media (max-width: 767.98px) {
+			font-size: 28px;
+			line-height: 30px;
+			font-weight: 700;
+		}
+	}
+}
+
+// Карточки______________________________________________________
+.dish {
+	
+	// .dish__cards
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+		row-gap: 30px;
+	}
+	// .dish__card
+	&__card {
+		flex: 1 1 33.333%;
+		padding: 0 15px;
+		min-width: 290px;
+
+	}
+}
+
+.card-dish {
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	// .card-dish__picture
+	&__picture {
+		position: relative;
+		padding: 0px 0px 74.28% 0px;
+	}
+	// .card-dish__image
+	&__image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	// .card-dish__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		padding: 28px 30px;
+		background: #252525;
+		flex: 1 1 auto;
+	}
+	// .card-dish__title
+	&__title {
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 33px;
+		color: #d9d9d9;
+	}
+	// .card-dish__subtitle
+	&__subtitle {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: -0.15px;
+		color: #a4a8b2;
+		&:not(:last-child) {
+			margin: 0px 0px 20px 0px;
+		}
+		
+	}
+	// .card-dish__text
+	&__text {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 18px;
+		letter-spacing: -0.1625px;
+		color: #85878c;
+		flex: 1 1 auto;
+		&:not(:last-child) {
+			margin: 0px 0px 26px 0px;
+		}
+	}
+
+	// .card-dish__bottom-items
+	&__bottom-items {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		
+	}
+	// .card-dish__stars
+	&__stars {
+	}
+	// .card-dish__button
+	&__button {
+	font-weight: 900;
+	font-size: 10px;
+	text-align: center;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	padding: 15px 31px;
+	border-radius: 30px;
+	transition-duration: 0.3s;
+	color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+		&:hover {
+			background: #34C759;
+			color: #252525;
+			border: 1px solid rgba(255, 255, 255, 0);
+		}
+	}
+}
+
+// Третий блок________________________________________________
+
+.how-work {
+	// .how-work__container
+	&__container {
+	}
+	// .how-work__titles
+	&__titles {
+		text-align: center;
+		padding: 90px 0px 60px 0px;
+		position: relative;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: 767.98px) {
+			padding: 45px 0px 0px 0px;
+		}
+	}
+}
+.titles-dish {
+	// .titles-dish__title
+	&__title {
+			// .titles-dish__title_position
+			&_position {
+				top: 26%;
+				left: 36%;
+				@media (max-width: 1140px) {
+					left: 33%;
+				}
+				@media (max-width: 991.98px) {
+					left: 28%;
+				}
+			}
+	}
+	// .titles-dish__uptitle
+	&__uptitle {
+	}
+}
+
+
+// Карточки________________________________
+.how-work {
+	// .how-work__items
+	&__items {
+		display: flex;
+		margin: 0 -15px;
+		flex-wrap: wrap;
+		gap: 30px 0px;
+	}
+	// .how-work__item
+	&__item {
+		padding: 0 15px;
+		flex: 1 1 25%;
+		@media (max-width: 991.98px) {
+			flex: 1 1 50%;
+		}
+		@media (max-width: 767.98px) {
+			flex: 1 1 auto;
+		}
+		
+	}
+	// .how-work__card
+	&__card {
+
+	}
+}
+.card-how-work {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		background: #252525;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+		border-radius: 6px;
+		padding: 24px 24px 42px 24px;
+		transition-duration: 0.3s;
+
+			&:hover{
+				color: #191919;
+				background: #34c759;
+				
+			}
+			&:hover &__text{
+				color: #191919;
+			}
+			&:hover ::before{
+				color: #191919;
+				background: #191919;
+			}
+
+
+	// .card-how-work__title
+	&__title {
+		position: relative;
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 26px;
+		letter-spacing: -0.275px;
+		text-transform: capitalize;
+		padding-bottom: 20px;
+			&:not(:last-child) {
+				margin: 0px 0px 26px 0px;
+			}
+			&::before {
+				content: '';
+				width: 52px;
+				height: 2px;
+				display: block;
+				background: #34C759;
+				position: absolute;
+				top: 100%;
+				left: 0%;
+				transition-duration: 0.3s;
+			}
+	}
+	// .card-how-work__text
+	&__text {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 18px;
+		letter-spacing: -0.1625px;
+		color: rgba(255, 255, 255, 0.5);
+		transition-duration: 0.3s;
+		flex: 1 1 auto;
+	}
+}
+
+
+
+
+
